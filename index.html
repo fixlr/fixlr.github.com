@@ -3,16 +3,38 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 	<meta http-equiv="content-type" content="text/html; charset=iso-8859-1" />
+	<link rel="stylesheet" href="styles/screen.css" type="text/css" media="screen, projection">
+	<link rel="stylesheet" href="styles/fixlr.css" type="text/css" media="screen, projection">
+	<title>nathan.fixler.org</title>
 </head>
 <body>
-<h1>Hai.</h1>
+<div class="container">
+	<hr class="space" />
+	<h1 class="first">NF</h1>
+	<hr />
+	<div id="twitter">
+		<ul id="twitter_update_list"></ul>
+	</div>
 
-<div id="twitter">
-<h2 class="sidebar-title">Twitter</h2>
-<ul id="twitter_update_list"></ul>
-<a href="http://twitter.com/fixlr" id="twitter-link" style="display:block;text-align:right;">follow me on Twitter</a>
+	<div id="flickr">
+		<ul id="flickr_update_list"></ul>
+	</div>
+	<hr />
+	<div class="container">
+		<div class="column span-4">
+			<p>Nathan Fixler<br />
+				 @<a href="http://www.sunyconnect.suny.edu/">SUNY OLIS</a></p>
+		</div>
+		<div class="column span-20 last">
+			<p><a href="http://github.com/fixlr">github.com/fixlr</a><br />
+			   <a href="http://flickr.com/photos/fixler">flickr.com/photos/fixler</a><br />
+			   <a href="http://twitter.com/fixlr">twitter.com/fixlr</a><br />
+		</div>
+	</div>
 </div>
 <script type="text/javascript" src="http://twitter.com/javascripts/blogger.js"></script>
 <script type="text/javascript" src="http://twitter.com/statuses/user_timeline/fixlr.json?callback=twitterCallback2&amp;count=6"></script>
+<script type="text/javascript" src="flickr.js"></script>
+<script type="text/javascript" src="http://api.flickr.com/services/feeds/photos_public.gne?id=72996797@N00&amp;lang=en-us&amp;format=json"></script>
 </body>
 </html>

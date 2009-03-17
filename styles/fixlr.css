@@ -1,0 +1,4 @@
+h1 { text-align: center; letter-spacing: -9px;}
+ul#flickr_update_list { list-style: none; margin-left: auto; margin-right: auto; }
+ul#flickr_update_list li { display: inline; }
+ul#flickr_update_list li img { padding: 2px; border: 1px solid #aaa; margin: 0 6px; }
