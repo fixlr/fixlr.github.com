@@ -3,6 +3,25 @@ h1 {
 	letter-spacing: -9px;
 }
 
+ul#twitter_update_list {
+	font-size: 18px;
+	list-style: none;
+	margin-left: 0;
+}
+
+ul#twitter_update_list li {
+	margin-left: 0;
+}
+
+ul#twitter_update_list li a {
+	text-decoration: none;
+}
+
+ul#twitter_update_list li span a {
+	text-decoration: underline;
+}
+
+
 ul#flickr_update_list { 
 	list-style: none; 
 	margin-left: auto; 
@@ -17,4 +36,14 @@ ul#flickr_update_list li img {
 	padding: 2px; 
 	border: 1px solid #aaa; 
 	margin: 0 6px; 
+}
+
+ul#flickr_update_list li a img { 
+	padding: 2px; 
+	border: 7px solid #aaa; 
+	margin: 0 9px 0 0; 
+}
+
+ul#flickr_update_list li a:hover img {
+	border: 7px solid #333;
 }
