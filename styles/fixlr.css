@@ -1,16 +1,21 @@
 h1 { 
-	text-align: center; 
-	letter-spacing: -9px;
+	text-align: center;
+	font-family: serif;
+	text-transform: lowercase;
+	font-style: italic;
+}
+
+ul#github_update_list {
+	list-style: none;
+	margin-left: 0;
+	font-size: 16px;
 }
 
 ul#twitter_update_list {
 	font-size: 18px;
 	list-style: none;
 	margin-left: 0;
-}
-
-ul#twitter_update_list li {
-	margin-left: 0;
+	font-size: 16px;
 }
 
 ul#twitter_update_list li a {

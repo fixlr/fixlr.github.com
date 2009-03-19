@@ -1,20 +1,21 @@
+function githubCallback(projs) {
+	var A = [];
+	for (var i=0; i<projs.user.repositories.length; i++){
+		var r = projs.user.repositories[i];
+		A.push('<li><img src="images/public.png" alt="" /> <a href="'+r.url+'">'+r.name+'</a> <span style="font-size: 11px;">('+r.description+')</span></li>');
+	}
+	document.getElementById('github_update_list').innerHTML = A.join("");
+}
+
 function jsonFlickrFeed(rsp) {
+	var A = [];
 	for (var i=0; i<rsp.items.length; i++){
 		var item = rsp.items[i];
-		
 		var url = item.media.m.replace(/\_m\./, '_s.');
-		var li = document.createElement('li');
-		var img = document.createElement('img');
-		var anch = document.createElement('a');
-		img.setAttribute('src', url);
-		img.setAttribute('alt', '');
-		img.setAttribute('width', '75');
-		img.setAttribute('height', '75');
-		anch.setAttribute('href', item.link);
-		anch.appendChild(img);
-		li.appendChild(anch);
-		document.getElementById('flickr_update_list').appendChild(li);
+
+		A.push('<li><a href="'+item.link+'"><img src="'+url+'" width="75" height="75" alt="" /></a></li>');
 	}
+	document.getElementById('flickr_update_list').innerHTML = A.join("");
 }
 
 function twitterCallback2(C) {
