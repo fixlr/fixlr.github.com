@@ -1,3 +1,12 @@
+function greaderCallback(gr) {
+	var A = [];
+	for (var i = 0; i<10; i++){
+		var r = gr.items[i];
+		A.push('<li><a href="'+r.alternate.href+'">'+r.title+'</a></li>');
+	}
+	document.getElementById('greader_update_list').innerHTML = A.join("");
+}
+
 function githubCallback(projs) {
 	var A = [];
 	for (var i=0; i<projs.user.repositories.length; i++){
@@ -33,3 +42,4 @@ function twitterCallback2(C) {
     }
     document.getElementById("twitter_update_list").innerHTML = A.join("")
 }
+
