@@ -1,36 +1,58 @@
+body {
+	font-family: Helvetica;
+}
+
 h1 { 
 	text-align: center;
-	font-family: serif;
-	text-transform: lowercase;
-	font-style: italic;
+	margin-bottom: 0;
 }
+h1+div {
+	text-align: center;
+	margin-bottom: -0.5em;
+}
+
+h2 { width: 100px; margin: 0 auto; }
+h2 a {
+	display: block;
+	text-indent: -9000px;
+	height: 90px;
+	width: 100px;
+	margin-top: 2em;
+	margin-bottom: 0.5em;
+}
+#github h2 {
+	background: transparent url(../images/octocat.jpg) no-repeat top left;
+}
+#flickr h2 {
+	background: transparent url(../images/nikon.jpg) no-repeat top left;
+}
+#greader h2 {
+	background: transparent url(../images/greader.jpg) no-repeat top left;
+}
+
+#github ul, #flickr ul, #greader ul {
+	margin: 0 auto;
+}
+
+div.container {
+	width: 500px;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+
 
 ul#github_update_list {
-	list-style: none;
-	margin-left: 0;
-	font-size: 16px;
 }
-
-ul#twitter_update_list {
-	font-size: 18px;
-	list-style: none;
-	margin-left: 0;
-	font-size: 16px;
+ul#greader_update_list li, ul#github_update_list li {
+	line-height: 1.5em;
 }
-
-ul#twitter_update_list li a {
-	text-decoration: none;
+ul#github_update_list li span, ul#github_update_list li img {
+	display: none;
 }
-
-ul#twitter_update_list li span a {
-	text-decoration: underline;
-}
-
 
 ul#flickr_update_list { 
 	list-style: none; 
-	margin-left: auto; 
-	margin-right: auto; 
 }
 
 ul#flickr_update_list li { 
@@ -51,4 +73,21 @@ ul#flickr_update_list li a img {
 
 ul#flickr_update_list li a:hover img {
 	border: 7px solid #333;
+}
+
+#greader h2 {
+	margin-bottom: 1em;
+}
+
+#facebook {
+	text-align: center;
+	margin-top: 2em;
+}
+
+.footer {
+	text-align: center;
+	font-style: italic;
+	text-transform: lowercase;
+	margin: 6em 0;
+	font-size: 11px;
 }
