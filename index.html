@@ -1,59 +1,51 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
-        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
+<!DOCTYPE html>
+<html lang="en">
 <head>
-	<meta http-equiv="content-type" content="text/html; charset=iso-8859-1" />
-	<link rel="openid2.provider" href="https://www.google.com/accounts/o8/ud?source=profiles" > 
+  <meta charset="utf-8">
+  <title>Nathan Fixler</title>
+  <link rel="openid2.provider" href="https://www.google.com/accounts/o8/ud?source=profiles" >
   <link rel="openid2.local_id" href="http://www.google.com/profiles/fixler" >
-	<link rel="stylesheet" href="styles/fixlr.css" type="text/css" media="screen, projection">
-	<script type="text/javascript" src="fixlr.js"></script>
-	<title>Nathan Fixler</title>
+  <link rel="stylesheet" href="styles/fixlr.css?v=1">
 </head>
 <body>
-<div class="container">
-	<h1>Nathan Fixler</h1>
-	<div>web developer<br /> at <a href="http://www.suny.edu">SUNY</a></div>
+  <div class="container">
+    <h1>Nathan Fixler</h1>
+    <div>
+      web developer<br />
+      at <a href="http://www.suny.edu">SUNY</a>
+    </div>
 
-	<div id="flickr">
-		<h2>
-			<a href="http://www.flickr.com/fixler" rel="external">Photos</a>
-		</h2>
-		<div>
-			<ul id="flickr_update_list"></ul>
-		</div>
-	</div>
-	<div id="github">
-		<h2>
-			<a href="Github projects">Projects</a>
-		</h2>
-		<div>
-			<ul id="github_update_list"></ul>
-		</div>
-	</div>
-	<div id="greader">
-		<h2>
-			<a href="http://www.google.com/reader/shared/fixler">Recent Links</a>
-		</h2>
-		<div>
-			<ul id="greader_update_list"></ul>
-		</div>
-	</div>
-	
-	<div id="facebook"><a href="http://www.facebook.com/fixler">Facebook</a></div>
-	<div class="footer">Anywhere but here...</div>
-</div>
-<script type="text/javascript" src="http://www.google.com/reader/public/javascript/user%2F02998308734460430396%2Fstate%2Fcom.google%2Fbroadcast?callback=greaderCallback"></script>
-<script type="text/javascript" src="http://github.com/api/v1/json/fixlr?callback=githubCallback"></script>
-<script type="text/javascript" src="http://api.flickr.com/services/feeds/photos_public.gne?id=72996797@N00&amp;lang=en-us&amp;format=json"></script>
+    <div id="flickr">
+      <h2><a href="http://www.flickr.com/fixler" rel="external">Photos</a></h2>
+    <div>
+      <ul id="flickr_update_list"></ul>
+    </div>
+    </div>
+    <div id="github">
+      <h2><a href="Github projects">Projects</a></h2>
+      <div>
+        <ul id="github_update_list"></ul>
+      </div>
+    </div>
 
-<script type="text/javascript">
-var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
-document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
-</script>
-<script type="text/javascript">
-try {
-var pageTracker = _gat._getTracker("UA-2519578-7");
-pageTracker._trackPageview();
-} catch(err) {}</script>
+    <div id="facebook"><a href="http://www.facebook.com/fixler">Facebook</a></div>
+    <div class="footer">Anywhere but here...</div>
+  </div>
+
+  <script type="text/javascript" src="fixlr.js"></script>
+  <script type="text/javascript" src="http://github.com/api/v1/json/fixlr?callback=githubCallback"></script>
+  <script type="text/javascript" src="http://api.flickr.com/services/feeds/photos_public.gne?id=72996797@N00&amp;lang=en-us&amp;format=json"></script>
+
+  <script type="text/javascript">
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-2519578-7']);
+    _gaq.push(['_trackPageview']);
+
+    (function() {
+      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+  </script>
 </body>
 </html>
