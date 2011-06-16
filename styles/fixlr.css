@@ -1,43 +1,43 @@
 body {
-	font-family: Helvetica;
+  font-family: Helvetica;
 }
 
 h1 { 
-	text-align: center;
-	margin-bottom: 0;
+  text-align: center;
+  margin-bottom: 0;
 }
 h1+div {
-	text-align: center;
-	margin-bottom: -0.5em;
+  text-align: center;
+  margin-bottom: -0.5em;
 }
 
 h2 { width: 100px; margin: 0 auto; }
 h2 a {
-	display: block;
-	text-indent: -9000px;
-	height: 90px;
-	width: 100px;
-	margin-top: 2em;
-	margin-bottom: 0.5em;
+  display: block;
+  text-indent: -9000px;
+  height: 90px;
+  width: 100px;
+  margin-top: 2em;
+  margin-bottom: 0.5em;
 }
 #github h2 {
-	background: transparent url(../images/octocat.jpg) no-repeat top left;
+  background: transparent url(../images/octocat.jpg) no-repeat top left;
 }
 #flickr h2 {
-	background: transparent url(../images/nikon.jpg) no-repeat top left;
+  background: transparent url(../images/nikon.jpg) no-repeat top left;
 }
 #greader h2 {
-	background: transparent url(../images/greader.jpg) no-repeat top left;
+  background: transparent url(../images/greader.jpg) no-repeat top left;
 }
 
 #github ul, #flickr ul, #greader ul {
-	margin: 0 auto;
+  margin: 0 auto;
 }
 
 div.container {
-	width: 500px;
-	margin-left: auto;
-	margin-right: auto;
+  width: 500px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 
@@ -45,49 +45,49 @@ div.container {
 ul#github_update_list {
 }
 ul#greader_update_list li, ul#github_update_list li {
-	line-height: 1.5em;
+  line-height: 1.5em;
 }
 ul#github_update_list li span, ul#github_update_list li img {
-	display: none;
+  display: none;
 }
 
 ul#flickr_update_list { 
-	list-style: none; 
+  list-style: none; 
 }
 
 ul#flickr_update_list li { 
-	display: inline; 
+  display: inline; 
 }
 
 ul#flickr_update_list li img { 
-	padding: 2px; 
-	border: 1px solid #aaa; 
-	margin: 0 6px; 
+  padding: 2px; 
+  border: 1px solid #aaa; 
+  margin: 0 6px; 
 }
 
 ul#flickr_update_list li a img { 
-	padding: 2px; 
-	border: 7px solid #aaa; 
-	margin: 0 9px 0 0; 
+  padding: 2px; 
+  border: 7px solid #aaa; 
+  margin: 0 9px 0 0; 
 }
 
 ul#flickr_update_list li a:hover img {
-	border: 7px solid #333;
+  border: 7px solid #333;
 }
 
 #greader h2 {
-	margin-bottom: 1em;
+  margin-bottom: 1em;
 }
 
 #facebook {
-	text-align: center;
-	margin-top: 2em;
+  text-align: center;
+  margin-top: 2em;
 }
 
 .footer {
-	text-align: center;
-	font-style: italic;
-	text-transform: lowercase;
-	margin: 6em 0;
-	font-size: 11px;
+  text-align: center;
+  font-style: italic;
+  text-transform: lowercase;
+  margin: 6em 0;
+  font-size: 11px;
 }
