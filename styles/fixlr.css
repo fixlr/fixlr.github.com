@@ -11,40 +11,50 @@ h1+div {
   margin-bottom: -0.5em;
 }
 
-h2 { width: 100px; margin: 0 auto; }
+h2 { 
+  width: 100px; 
+  margin: 0 auto; 
+}
+
 h2 a {
   display: block;
-  text-indent: -9000px;
-  height: 90px;
   width: 100px;
   margin-top: 2em;
   margin-bottom: 0.5em;
+  text-transform: lowercase;
 }
-#github h2 {
-  background: transparent url(../images/octocat.jpg) no-repeat top left;
-}
-#flickr h2 {
-  background: transparent url(../images/nikon.jpg) no-repeat top left;
-}
-#greader h2 {
-  background: transparent url(../images/greader.jpg) no-repeat top left;
+h2 a:before {
+  content: '/';
 }
 
-#github ul, #flickr ul, #greader ul {
+a {
+  text-decoration: none;
+}
+a:hover {
+  text-decoration: underline;
+}
+
+#github ul, #flickr ul {
   margin: 0 auto;
 }
 
-div.container {
-  width: 500px;
-  margin-left: auto;
-  margin-right: auto;
+.container {
+  width: 40%;
+  float: left;
+  margin: 0 5% 4em;
 }
 
-
+.container:before, .container:after {
+  content: '';
+  display: table;
+}
+.container:after {
+  clear: both;
+}
 
 ul#github_update_list {
 }
-ul#greader_update_list li, ul#github_update_list li {
+ul#github_update_list li {
   line-height: 1.5em;
 }
 ul#github_update_list li span, ul#github_update_list li img {
@@ -75,16 +85,9 @@ ul#flickr_update_list li a:hover img {
   border: 7px solid #333;
 }
 
-#greader h2 {
-  margin-bottom: 1em;
-}
-
-#facebook {
-  text-align: center;
-  margin-top: 2em;
-}
 
 .footer {
+  clear: left;
   text-align: center;
   font-style: italic;
   text-transform: lowercase;

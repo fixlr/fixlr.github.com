@@ -8,29 +8,22 @@
   <link rel="stylesheet" href="styles/fixlr.css?v=1">
 </head>
 <body>
-  <div class="container">
-    <h1>Nathan Fixler</h1>
-    <div>
-      web developer<br />
-      at <a href="http://www.suny.edu">SUNY</a>
-    </div>
+  <h1>Nathan Fixler</h1>
 
-    <div id="flickr">
-      <h2><a href="http://www.flickr.com/fixler" rel="external">Photos</a></h2>
-    <div>
-      <ul id="flickr_update_list"></ul>
-    </div>
-    </div>
-    <div id="github">
-      <h2><a href="https://github.com/fixlr">Projects</a></h2>
-      <div>
-        <ul id="github_update_list"></ul>
-      </div>
-    </div>
-
-    <div id="facebook"><a href="http://www.facebook.com/fixler">Facebook</a></div>
-    <div class="footer">Anywhere but here...</div>
+  <div id="flickr" class="container">
+    <h2><a href="http://www.flickr.com/fixler" rel="external">Photos</a></h2>
+  <div>
+    <ul id="flickr_update_list"></ul>
   </div>
+  </div>
+  <div id="github" class="container">
+    <h2><a href="https://github.com/fixlr">Projects</a></h2>
+    <div>
+      <ul id="github_update_list"></ul>
+    </div>
+  </div>
+
+  <div class="footer">Anywhere but here...</div>
 
   <script type="text/javascript" src="fixlr.js"></script>
   <script type="text/javascript" src="http://github.com/api/v1/json/fixlr?callback=githubCallback"></script>
