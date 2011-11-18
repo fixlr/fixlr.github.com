@@ -18,11 +18,17 @@ function githubCallback(projs) {
 
 function jsonFlickrFeed(rsp) {
   var A = [];
+  var previousTitle = '';
   for (var i=0; i<rsp.items.length; i++){
     var item = rsp.items[i];
     var url = item.media.m.replace(/\_m\./, '_s.');
-
-    A.push('<li><a href="'+item.link+'"><img src="'+url+'" width="75" height="75" alt="" /></a></li>');
+    if (item.title == previousTitle) {
+      A.push('<li class="short_img"><img src="'+url+'" width="75" height="75" alt="" /></li>');
+    }
+    else {
+      previousTitle = item.title;
+      A.push('<li><a href="'+item.link+'"><img src="'+url+'" width="75" height="75" alt="" /><span class="title">'+item.title+'</span></a><span class="tags">'+item.tags+'</span></li>');
+    }
   }
   document.getElementById('flickr_update_list').innerHTML = A.join("");
 }

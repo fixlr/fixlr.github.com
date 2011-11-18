@@ -1,19 +1,25 @@
 body {
-  font-family: Helvetica;
+  width: 800px;
+  margin: 0 auto;
+  font-family: "Oswald"; sans-serif;
+  color: #333;
+}
+
+a {
+  color: darkgreen;
 }
 
 h1 { 
-  text-align: center;
-  margin-bottom: 0;
+  margin-bottom: 0.5em;
 }
 h1+div {
-  text-align: center;
   margin-bottom: -0.5em;
 }
 
 h2 { 
   width: 100px; 
-  margin: 0 auto; 
+  margin: 0;
+  display: none;
 }
 
 h2 a {
@@ -21,10 +27,7 @@ h2 a {
   width: 100px;
   margin-top: 2em;
   margin-bottom: 0.5em;
-  text-transform: lowercase;
-}
-h2 a:before {
-  content: '/';
+  color: #333;
 }
 
 a {
@@ -39,9 +42,9 @@ a:hover {
 }
 
 .container {
-  width: 40%;
+  width: 100%;
   float: left;
-  margin: 0 5% 4em;
+  margin: 0 0 2em;
 }
 
 .container:before, .container:after {
@@ -53,11 +56,20 @@ a:hover {
 }
 
 ul#github_update_list {
+  list-style: none;
+  padding: 0;
 }
 ul#github_update_list li {
-  line-height: 1.5em;
+  height: 100px;
+  font-size: 2em;
+  text-indent: 100px;
 }
-ul#github_update_list li span, ul#github_update_list li img {
+ul#github_update_list li span {
+  color: #aaa;
+  display: block;
+}
+
+ul#github_update_list li img {
   display: none;
 }
 
@@ -65,24 +77,43 @@ ul#flickr_update_list {
   list-style: none; 
 }
 
+ul#flickr_update_list {
+  padding: 0;
+}
+
 ul#flickr_update_list li { 
-  display: inline; 
+  clear: left;
+  height: 95px;
+  display: block;
 }
 
 ul#flickr_update_list li img { 
   padding: 2px; 
-  border: 1px solid #aaa; 
+  border: 1px solid #ddd;
   margin: 0 6px; 
+  float: left;
+}
+
+ul#flickr_update_list li.short_img {
+  display: inline-block;
+}
+
+ul#flickr_update_list li span.title {
+  font-size: 2em;
+}
+ul#flickr_update_list li span.tags {
+  font-size: 11px;
+  display: block;
+  color: #bbb;
 }
 
 ul#flickr_update_list li a img { 
   padding: 2px; 
-  border: 7px solid #aaa; 
   margin: 0 9px 0 0; 
 }
 
 ul#flickr_update_list li a:hover img {
-  border: 7px solid #333;
+  border: 1px solid #333;
 }
 
 
