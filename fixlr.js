@@ -1,51 +1,57 @@
-function greaderCallback(gr) {
-  var A = [];
-  for (var i = 0; i<10; i++){
-    var r = gr.items[i];
-    A.push('<li><a href="'+r.alternate.href+'">'+r.title+'</a></li>');
-  }
-  document.getElementById('greader_update_list').innerHTML = A.join("");
-}
+(function() {
+  window.githubCallback = function(projs) {
+    var A = [],
+      repos = projs.user.repositories;
 
-function githubCallback(projs) {
-  var A = [];
-  for (var i=0; i<projs.user.repositories.length; i++){
-    var r = projs.user.repositories[i];
-    A.push('<li><img src="images/public.png" alt="" /> <a href="'+r.url+'">'+r.name+'</a> <span style="font-size: 11px;">('+r.description+')</span></li>');
-  }
-  document.getElementById('github_update_list').innerHTML = A.join("");
-}
+    repos.sort(function(a, b) {
+      if (a.pushed_at < b.pushed_at)
+        return 1;
+      if (a.pushed_at > b.pushed_at)
+        return -1;
+      return 0;
+    });
 
-function jsonFlickrFeed(rsp) {
-  var A = [];
-  var previousTitle = '';
-  for (var i=0; i<rsp.items.length; i++){
-    var item = rsp.items[i];
-    var url = item.media.m.replace(/\_m\./, '_s.');
-    if (item.title == previousTitle) {
-      A.push('<li class="short_img"><img src="'+url+'" width="75" height="75" alt="" /></li>');
+    for (var i=0; i < repos.length; i++){
+      var r = repos[i],
+        description = '';
+
+      if (r.private == false && r.fork == false) {
+        if (r.description) {
+          description = '<span class="tag">'+r.description+'</span>';
+        }
+        A.push('<li class="section project"><a rel="me" href="'+r.url+'"><img class="thumb" src="images/proj.png" alt=""> <span class="heading">'+r.name+'</span></a> '+description+'</li>');
+      }
     }
-    else {
-      previousTitle = item.title;
-      A.push('<li><a href="'+item.link+'"><img src="'+url+'" width="75" height="75" alt="" /><span class="title">'+item.title+'</span></a><span class="tags">'+item.tags+'</span></li>');
-    }
+    document.getElementById('github_update_list').innerHTML = A.join("");
   }
-  document.getElementById('flickr_update_list').innerHTML = A.join("");
-}
 
-function twitterCallback2(C) {
+  window.jsonFlickrFeed = function(rsp) {
     var A = [];
-    for (var D = 0; D < C.length; D++) {
-        var E = C[D].user.screen_name;
-        var B = C[D].text.replace(/((https?|s?ftp|ssh)\:\/\/[^"\s\<\>]*[^.,;'">\:\s\<\>\)\]\!])/g,
-        function(F) {
-            return '<a href="' + F + '">' + F + "</a>"
-        }).replace(/\B@([_a-z0-9]+)/ig,
-        function(F) {
-            return F.charAt(0) + '<a href="http://www.twitter.com/' + F.substring(1) + '">' + F.substring(1) + "</a>"
-        });
-        A.push('<li><a style="font-size:85%" href="http://twitter.com/' + E + "/statuses/" + C[D].id + '">&#8658;</a> <span>' + B + '</span></li>')
-    }
-    document.getElementById("twitter_update_list").innerHTML = A.join("")
-}
+    var previousTitle = '';
+    for (var i=0; i<rsp.items.length; i++){
+      var item = rsp.items[i];
+      var url = item.media.m.replace(/\_m\./, '_s.');
+      var published_date = new Date(item.published).toDateString();
 
+      if (item.title == previousTitle) {
+        A.push('<li class="extra section photo"><a rel="me" href="'+item.link+'"><img width="25" height="25" rel="me" class="thumb" src="'+url+'" alt=""></a></li>');
+      }
+      else {
+        previousTitle = item.title;
+        A.push('<li class="section photo"><a rel="me" href="'+item.link+'"><img class="thumb" width="75" height="75" src="'+url+'" alt=""> <span class="heading">'+item.title+'</span></a> <span class="tag">'+published_date+'</span></li>');
+      }
+    }
+    document.getElementById('flickr_update_list').innerHTML = A.join("");
+  }
+
+  loadContentFrom = function(src) {
+    var script = document.createElement('script');
+    script.src = src;
+    document.body.appendChild(script);
+  }
+
+  window.onload = function() {
+    loadContentFrom('http://api.flickr.com/services/feeds/photos_public.gne?id=72996797@N00&lang=en-us&format=json');
+    loadContentFrom('http://github.com/api/v1/json/fixlr?callback=githubCallback');
+  }
+})();

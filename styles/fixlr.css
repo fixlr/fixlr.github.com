@@ -1,127 +1,161 @@
 body {
-  width: 800px;
-  margin: 0 auto;
+  font-size: 14px;
   font-family: "Oswald"; sans-serif;
   color: #333;
+  background-color: #fff;
+  margin: 0;
+  padding: 0;
+}
+
+h1 {
+  margin: 0;
+  padding: 0;
+  font-weight: normal;
+}
+
+h2 {
+  font-size: 1.5em;
+  border-top: 1px solid #aaa;
+  background-color: #eee;
+  line-height: 54px;
+  text-indent: 54px;
+  text-transform: uppercase;
+}
+#projects h2 {
+  background: #eee url(../images/gh.png) no-repeat 3px 3px;
+}
+#photos h2 {
+  background: #eee url(../images/flr.png) no-repeat 3px 3px;
+}
+
+a h1, h2 a {
+  color: #444;
 }
 
 a {
   color: darkgreen;
-}
-
-h1 { 
-  margin-bottom: 0.5em;
-}
-h1+div {
-  margin-bottom: -0.5em;
-}
-
-h2 { 
-  width: 100px; 
-  margin: 0;
-  display: none;
-}
-
-h2 a {
-  display: block;
-  width: 100px;
-  margin-top: 2em;
-  margin-bottom: 0.5em;
-  color: #333;
-}
-
-a {
   text-decoration: none;
 }
+
 a:hover {
   text-decoration: underline;
 }
 
-#github ul, #flickr ul {
-  margin: 0 auto;
-}
-
-.container {
-  width: 100%;
-  float: left;
-  margin: 0 0 2em;
-}
-
-.container:before, .container:after {
-  content: '';
-  display: table;
-}
-.container:after {
-  clear: both;
-}
-
-ul#github_update_list {
+ul {
   list-style: none;
-  padding: 0;
-}
-ul#github_update_list li {
-  height: 100px;
-  font-size: 2em;
-  text-indent: 100px;
-}
-ul#github_update_list li span {
-  color: #aaa;
-  display: block;
-}
-
-ul#github_update_list li img {
-  display: none;
-}
-
-ul#flickr_update_list { 
-  list-style: none; 
-}
-
-ul#flickr_update_list {
+  margin: 0;
   padding: 0;
 }
 
-ul#flickr_update_list li { 
-  clear: left;
-  height: 95px;
+li {
   display: block;
 }
 
-ul#flickr_update_list li img { 
-  padding: 2px; 
-  border: 1px solid #ddd;
-  margin: 0 6px; 
-  float: left;
+.page {
+  width: 800px;
+  margin: 0 auto;
+  background-color: #fff;
+  padding: 1em 0 0;
 }
 
-ul#flickr_update_list li.short_img {
+/*
+ * .section
+ * .thumb
+ * .heading
+ * .tag
+ *
+ * .extra.thumb
+ */
+
+.section:after {
+  visibility: hidden;
+  display: block;
+  font-size: 0;
+  content: " ";
+  clear: both;
+  height: 0;
+}
+
+.section {
   display: inline-block;
+  margin-bottom: 1em;
+  margin-left: 85px;
+}
+/* \*/
+* html .section { height: 1%; }
+.section { display: block; }
+/* */
+
+.thumb {
+  opacity: 0.9;
+  float: left;
+  padding: 2px;
+  margin-left: -86px;
+  border: 1px solid #bbb;
+}
+.thumb:hover {
+  border: 1px solid #888;
+  opacity: 1;
 }
 
-ul#flickr_update_list li span.title {
-  font-size: 2em;
+.photo .thumb {
+  width: 75px;
+  height: 75px;
 }
-ul#flickr_update_list li span.tags {
-  font-size: 11px;
+
+.project .thumb {
+  width: 30px;
+  margin-left: -40px;
+  margin-top: 2px;
+  border: 0px;
+  padding: 0px;
+  opacity: 0.7;
+}
+
+.extra {
+  display: inline-block;
+  height: 30px; 
+  width: 30px;
+  margin: -2em 3px 1em 0;
+}
+.extra .thumb {
+  padding: 1px;
+  width: 25px;
+  height: 25px;
+}
+
+.extra .thumb:hover {
+  opacity: 0.9;
+}
+
+.extra .thumb:first-child {
+  margin-left: 85px;
+}
+
+.heading {
+  font-size: 1.5em;
+}
+
+.tag {
+  font-family: Helvetica;
   display: block;
+  margin-left: 0px;
+  font-size: 11px;
   color: #bbb;
 }
 
-ul#flickr_update_list li a img { 
-  padding: 2px; 
-  margin: 0 9px 0 0; 
+.gravatar {
+  width: 73px;
+  height: 73px;
+  opacity: 1;
+  border: 1px solid #bbb;
 }
-
-ul#flickr_update_list li a:hover img {
-  border: 1px solid #333;
-}
-
 
 .footer {
   clear: left;
   text-align: center;
   font-style: italic;
   text-transform: lowercase;
-  margin: 6em 0;
+  padding: 2em 0;
   font-size: 11px;
 }
