@@ -1,30 +1,4 @@
 (function() {
-  window.githubCallback = function(projs) {
-    var A = [],
-      repos = projs.user.repositories;
-
-    repos.sort(function(a, b) {
-      if (a.pushed_at < b.pushed_at)
-        return 1;
-      if (a.pushed_at > b.pushed_at)
-        return -1;
-      return 0;
-    });
-
-    for (var i=0; i < repos.length; i++){
-      var r = repos[i],
-        description = '';
-
-      if (r.private == false && r.fork == false) {
-        if (r.description) {
-          description = '<span class="tag">'+r.description+'</span>';
-        }
-        A.push('<li class="section project"><a rel="me" href="'+r.url+'"><img class="thumb" src="images/proj.png" alt=""> <span class="heading">'+r.name+'</span></a> '+description+'</li>');
-      }
-    }
-    document.getElementById('github_update_list').innerHTML = A.join("");
-  }
-
   window.jsonFlickrFeed = function(rsp) {
     var A = [];
     var previousTitle = '';
@@ -52,6 +26,5 @@
 
   window.onload = function() {
     loadContentFrom('http://api.flickr.com/services/feeds/photos_public.gne?id=72996797@N00&lang=en-us&format=json');
-    loadContentFrom('http://github.com/api/v1/json/fixlr?callback=githubCallback');
   }
 })();
